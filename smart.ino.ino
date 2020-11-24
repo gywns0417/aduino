@@ -1,4 +1,4 @@
-//핀번호 설정한다.
+//핀번호 설정
 int echoPin = 12;
 int trigPin = 13;
 int echoPin2 = 7;
@@ -10,7 +10,7 @@ int previous = LOW;
 void setup() {
 
   Serial.begin(9600);
-  // trig를 출력모드로 설정, echo를 입력모드로 설정
+  // trig 출력모드 echo 입력모드
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
    pinMode(trigPin2, OUTPUT);
@@ -25,14 +25,13 @@ void loop() {
 
   if (tvalue == LOW){ //터치 센서가 on인 상태
    
-  // 초음파를 보낸다. 다 보내면 echo가 HIGH 상태로 대기하게 된다.
+  // 초음파 보냄. echo가 HIGH 상태로 대기
   digitalWrite(trigPin, HIGH);
   delay(10);
   digitalWrite(trigPin, LOW);
   
-  // echoPin 이 HIGH를 유지한 시간을 저장 한다.
+  // echoPin 이 HIGH 지속 시간 저장
   duration = pulseIn(echoPin, HIGH);
-
   digitalWrite(trigPin2, HIGH);
   delay(10);
   digitalWrite(trigPin2, LOW);
